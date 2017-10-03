@@ -11,4 +11,4 @@ RUN mkdir -p /opt && \
     echo Spark ${spark_ver} installed in /opt
 
 ENV PATH $PATH:/opt/spark/bin
-ENTRYPOINT ["unset SPARK_MASTER_PORT &&	/opt/spark/sbin/start-slave.sh", "spark://spark-master:7077"]
+ENTRYPOINT ["/opt/spark/sbin/start-slave.sh", "spark://spark-master:7077"]
